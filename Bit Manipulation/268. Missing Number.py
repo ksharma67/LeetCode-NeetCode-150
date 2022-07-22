@@ -1,4 +1,13 @@
 class Solution:
+    def missingNumber(self, nums):
+        missing = len(nums)
+        for i, num in enumerate(nums):
+            missing ^= i ^ num
+        return missing
+
+    
+    
+class Solution:
     def missingNumber(self, nums: List[int]) -> int:
         n = len(nums)
         i = 0
