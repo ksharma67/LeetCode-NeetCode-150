@@ -1,3 +1,3 @@
-# LeetCode-Blind-75
+# LeetCode-NeetCode-150
 
-Leetcode Blind 75 problems solved in Python for interview prep.
+Leetcode NeetCode 150 problems solved in Python for interview prep.
