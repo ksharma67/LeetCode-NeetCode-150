@@ -2,10 +2,14 @@ class Solution:
     def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
         n = len(temperatures)
         answer = [0] * n
-        for day in range(n):
-            for future_day in range(day + 1, n):
-                if temperatures[future_day] > temperatures[day]:
-                    answer[day] = future_day - day
-                    break      
-                
+        stack = []
+        
+        for curr_day, curr_temp in enumerate(temperatures):
+            # Pop until the current day's temperature is not
+            # warmer than the temperature at the top of the stack
+            while stack and temperatures[stack[-1]] < curr_temp:
+                prev_day = stack.pop()
+                answer[prev_day] = curr_day - prev_day
+            stack.append(curr_day)
+        
         return answer
