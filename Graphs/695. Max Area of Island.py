@@ -1,5 +1,5 @@
-class Solution(object):
-    def maxAreaOfIsland(self, grid):
+class Solution:
+    def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
         seen = set()
         def area(r, c):
             if not (0 <= r < len(grid) and 0 <= c < len(grid[0])
